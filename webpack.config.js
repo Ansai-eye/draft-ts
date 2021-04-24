@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');;
 
 module.exports = {
-  entry: './src/_super.ts',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -37,6 +37,31 @@ module.exports = {
           'ts-loader'
         ],
         exclude: /node_module/
+      },
+      {
+        //设置less文件处理
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          //引入postcss
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    'postcss-preset-env',
+                    {
+                      browsers: 'last 2 versions'
+                    }
+                  ]
+                ]
+              }
+            }
+          },
+          'less-loader'
+        ]
       }
     ]
   },
