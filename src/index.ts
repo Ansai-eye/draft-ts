@@ -1,10 +1,10 @@
-import Food from './components/Food';
-import ScorePanel from './components/ScorePanel';
+import GameControl from './components/GameControl';
 import './style/index.less';
 
+const GC = new GameControl();
 
-const food = new Food();
-console.log(food.X);
-console.log(food.Y);
-food.change();
+// setInterval(()=>{
+//   console.log(GC.direction);
+  
+// },1000);
 
