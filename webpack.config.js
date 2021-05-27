@@ -2,8 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');;
 
+const tsImportPluginFactory = require('ts-import-plugin');
+
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -14,29 +16,44 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  "@babel/preset-env",
-                  {
-                    targets: {
-                      'chrome': '88',
-                      'ie': '11'
-                    },
-                    'corejs': '3',
-                    'useBuiltIns': 'usage'
-                  }
-                ]
-              ]
-            }
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'env', 'stage-0', 'stage-3'],
+            plugins: [
+              'transform-decorators-legacy',
+              ['import', { libraryName: 'antd', style: 'css' }], // `style: true` 会加载 less 文件
+            ],
           },
-          'ts-loader'
-        ],
-        exclude: /node_module/
+        },
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+        exclude: /node_modules/,
+        options: {
+          getCustomTransformers: () => ({
+            before: [tsImportPluginFactory([
+              {
+                libraryName: 'antd',
+                libraryDirectory: 'lib',
+                style: 'css'
+              }
+            ])]
+          })
+        },
+      },
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader',
+        exclude: /node_modules/,
       },
       {
         //设置less文件处理
@@ -62,7 +79,21 @@ module.exports = {
           },
           'less-loader'
         ]
-      }
+      },
+      {
+        test: /\.(eot|woff|ttf|woff2|svg|gif|png|jpg)(\?|$)/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[folder]/[name].[hash:8].[ext]',
+            outputPath: './static/assets'
+          }
+        }
+      },
+      {
+        test: /\.md$/,
+        use: "raw-loader"
+      },
     ]
   },
   plugins: [

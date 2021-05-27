@@ -4,14 +4,10 @@ interface IProps {
   children: React.ReactNode
 }
 
-interface IState {
-
-}
-
-const App: React.FC<IProps, IState> = () => {
+const TestPage: React.FC<IProps> = (props:IProps) => {
   return <div>
-    hello
-    </div>;
+    {props.children}
+  </div>;
 };
 
-export default App;
+export default TestPage;
