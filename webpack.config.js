@@ -2,13 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');;
 
-const tsImportPluginFactory = require('ts-import-plugin');
-
 module.exports = {
-  entry: './src/index',
+  entry: './src/indexHello',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash:8].js',
     environment: {
       arrowFunction: false
     }
@@ -16,44 +14,32 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['react', 'env', 'stage-0', 'stage-3'],
-            plugins: [
-              'transform-decorators-legacy',
-              ['import', { libraryName: 'antd', style: 'css' }], // `style: true` 会加载 less 文件
-            ],
-          },
-        },
-      },
-      {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
       },
       {
-        test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
-        exclude: /node_modules/,
-        options: {
-          getCustomTransformers: () => ({
-            before: [tsImportPluginFactory([
-              {
-                libraryName: 'antd',
-                libraryDirectory: 'lib',
-                style: 'css'
-              }
-            ])]
-          })
-        },
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
       },
       {
-        test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
+        test: /\.tsx?$/,
+        loader: 'babel-loader',
         exclude: /node_modules/,
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-react',
+            '@babel/preset-typescript'
+          ],
+          plugins: [
+            ['import',{
+              libraryName: 'antd',
+              style: 'css'
+            }]
+          ]
+        },
       },
       {
         //设置less文件处理

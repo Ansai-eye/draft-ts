@@ -5,7 +5,7 @@ import Hello from './m1';
 
 function App(): JSX.Element {
   return <Fragment>
-    <Hello>hello</Hello>
+    <Hello>hello @babel/preset-typescript</Hello> 
   </Fragment>;
 }
 
