@@ -1,22 +1,23 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/indexHello',
+  // entry: './src/indexHello',
+  entry: './src/index_game',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash:8].js',
     environment: {
-      arrowFunction: false
-    }
+      arrowFunction: false,
+    },
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.jsx?$/,
@@ -31,14 +32,17 @@ module.exports = {
           presets: [
             '@babel/preset-env',
             '@babel/preset-react',
-            '@babel/preset-typescript'
+            '@babel/preset-typescript',
           ],
           plugins: [
-            ['import',{
-              libraryName: 'antd',
-              style: 'css'
-            }]
-          ]
+            [
+              'import',
+              {
+                libraryName: 'antd',
+                style: 'css',
+              },
+            ],
+          ],
         },
       },
       {
@@ -56,15 +60,15 @@ module.exports = {
                   [
                     'postcss-preset-env',
                     {
-                      browsers: 'last 2 versions'
-                    }
-                  ]
-                ]
-              }
-            }
+                      browsers: 'last 2 versions',
+                    },
+                  ],
+                ],
+              },
+            },
           },
-          'less-loader'
-        ]
+          'less-loader',
+        ],
       },
       {
         test: /\.(eot|woff|ttf|woff2|svg|gif|png|jpg)(\?|$)/,
@@ -72,23 +76,23 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[folder]/[name].[hash:8].[ext]',
-            outputPath: './static/assets'
-          }
-        }
+            outputPath: './static/assets',
+          },
+        },
       },
       {
         test: /\.md$/,
-        use: "raw-loader"
+        use: 'raw-loader',
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html"
+      template: './public/index.html',
     }),
     new CleanWebpackPlugin(),
   ],
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', '.jsx']
-  }
+    extensions: ['.ts', '.js', '.tsx', '.jsx'],
+  },
 };

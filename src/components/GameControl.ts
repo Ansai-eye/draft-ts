@@ -2,7 +2,6 @@
 import Snake from './Snake';
 import Food from './Food';
 import ScorePanel from './ScorePanel';
-import { checkPropertyChange } from '../../node_modules/_@types_json-schema@7.0.7@@types/json-schema/index';
 //游戏控制器，控制所有其他的类
 class GameControl {
   //定义三个属性
