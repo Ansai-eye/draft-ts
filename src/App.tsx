@@ -3,7 +3,7 @@ import { withRouter, Switch, Route } from 'react-router-dom';
 import { Routers } from './routes';
 import { Home } from './pages';
 
-function App() {
+function App(): JSX.Element {
   return (
     <Switch>
       {Routers.map((router) => {

@@ -8,9 +8,12 @@ ReactDOM.render(
     {/* 使用了路由懒加载，所有要用suspense包裹 */}
     <Suspense fallback={<div></div>}>
       <Switch>
-        <Route path="/" render={routerProps => {
-          return <App {...routerProps} />;
-        }} />
+        <Route
+          path="/"
+          render={(routerProps) => {
+            return <App {...routerProps} />;
+          }}
+        />
       </Switch>
     </Suspense>
   </BrowserRouter>,
