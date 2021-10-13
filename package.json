@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "dev": "webpack serve --open --mode development"
+    "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --mode production",
+    "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve --open --mode development"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.3",
     "@types/react-router-dom": "^5.3.1",
+    "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "autoprefixer": "^10.2.6",
@@ -27,6 +28,7 @@
     "babel-plugin-import": "^1.13.3",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.10.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "eslint": "^7.27.0",
     "eslint-config-cbued": "^0.1.0",
@@ -42,6 +44,8 @@
     "raw-loader": "^4.0.2",
     "source-map-loader": "^2.0.1",
     "style-loader": "^2.0.0",
+    "ts-node": "^10.3.0",
+    "tsconfig-paths": "^3.11.0",
     "typescript": "^4.3.2",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.6.0",

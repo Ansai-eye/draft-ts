@@ -2,6 +2,6 @@
 import { lazy } from 'react';
 
 const Home = lazy(() => import('./home'));
-const Game = lazy(() => import('../index_game'));
+const Home2 = lazy(() => import('./home2'));
 
-export { Home, Game };
+export { Home,Home2 };
