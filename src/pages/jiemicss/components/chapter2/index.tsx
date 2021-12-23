@@ -14,6 +14,8 @@ const Chapter2: React.FC = () => {
     <section className="table-cloth"></section>
     <hr />
     <section className="radial"></section>
+    <hr />
+    <section className="border-radius"></section>
   </>;
 };
 
