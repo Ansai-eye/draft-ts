@@ -1,5 +1,7 @@
 import React from 'react';
+import testimg from '@/assets/img/test.jpg';
 import './index.less';
+
 
 const Chapter2: React.FC = () => {
   return <>
@@ -16,6 +18,9 @@ const Chapter2: React.FC = () => {
     <section className="radial"></section>
     <hr />
     <section className="border-radius"></section>
+    <hr />
+    <section className="skew"></section>
+    <img className="img img-test img-test-clip" src={testimg} alt="" />
   </>;
 };
 
