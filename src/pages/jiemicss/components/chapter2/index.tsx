@@ -21,6 +21,14 @@ const Chapter2: React.FC = () => {
     <hr />
     <section className="skew"></section>
     <img className="img img-test img-test-clip" src={testimg} alt="" />
+    <hr />
+    <section className="cut-corner">
+      Hey, focus! You're supposed to be looking at my corners, not reading my text. The text is just placeholder!
+    </section>
+    <hr />
+    <section className="trapezoid">
+     TRAPEZOID
+    </section>
   </>;
 };
 
