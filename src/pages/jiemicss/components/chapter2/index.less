@@ -106,3 +106,59 @@ img {
   padding: 1em;
   position: relative;
 }
+
+.pie {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  background: yellowgreen;
+  background-image: linear-gradient(to right, transparent 50%, #655 0);
+  &::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    // transform: rotate(.1turn);
+    animation: spin 50s linear infinite, bg 100s step-end infinite;
+    animation-play-state: paused;
+    animation-delay: inherit;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(.5turn);
+  }
+}
+
+@keyframes bg {
+  50% {
+    background: #655;
+  }
+}
+
+@keyframes fillup {
+  to {
+    stroke-dasharray: 100 100;
+  }
+}
+
+.pie-svg {
+  svg {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+    background: yellowgreen;
+    border-radius: 50%;
+  }
+  circle {
+    fill: yellowgreen;
+    stroke: #655;
+    stroke-width: 32;
+    stroke-dasharray: 38 100;
+    // animation: fillup 5s linear infinite;
+  }
+}

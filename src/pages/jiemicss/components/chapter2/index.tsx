@@ -29,6 +29,15 @@ const Chapter2: React.FC = () => {
     <section className="trapezoid">
      TRAPEZOID
     </section>
+    <hr />
+    <section className="pie" style={{animationDelay: '-20s'}}></section>
+    <section className="pie" style={{animationDelay: '-60s'}}></section>
+    <hr />
+    <section className="pie-svg">
+      <svg viewBox="0 0 32 32">
+        <circle r={16} cx={16} cy={16}></circle>
+      </svg>
+    </section>
   </>;
 };
 
