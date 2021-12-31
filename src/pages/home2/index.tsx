@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import PageContext from './page-context';
 
@@ -61,8 +61,27 @@ function Header(): JSX.Element {
   );
 }
 
+const initialState = { count: 0 };
+function reducer(state, action) {
+  switch (action.type) {
+  case 'increment':
+    return { count: state.count + 1 };
+  case 'decrement':
+    return { count: state.count - 1 };
+  default:
+    return { count: state.count };
+  }
+}
+
 function Body(): JSX.Element {
-  return <></>;
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+    </>
+  );
 }
 
 function Footer(): JSX.Element {
