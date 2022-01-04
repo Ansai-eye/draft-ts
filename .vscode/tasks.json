@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "git-fetch",
+      "type": "process",
+      "command":"git",
+      "args": [
+        "fetch"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
