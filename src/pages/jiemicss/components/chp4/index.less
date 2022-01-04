@@ -1,36 +1,80 @@
 @import "@/pages/jiemicss/index.less";
 
-.folder-coner(@background,@size,@angle: 30deg){
+.folder-coner(@background,@size,@angle: 30deg) {
   position: relative;
   background: @background;
-  background: linear-gradient(@angle - 180deg, transparent @size, @background 0);
-  border-radius: .5em;
+  background: linear-gradient(
+    @angle - 180deg,
+    transparent @size,
+    @background 0
+  );
+  border-radius: 0.5em;
 
   @x: (@size / sin(@angle));
   @y: (@size / cos(@angle));
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     background: linear-gradient(
-      to left bottom,
-      transparent 50%,
-      rgba(0,0,0,.2) 0,
-      rgba(0, 0, 0, 0.4) 0
-    )
-    100% 0 no-repeat;
+        to left bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.2) 0,
+        rgba(0, 0, 0, 0.4) 0
+      )
+      100% 0 no-repeat;
     width: @y;
     height: @x;
     transform: translateY(@y - @x) rotate(2 * @angle - 90deg);
     transform-origin: bottom right;
     border-bottom-left-radius: inherit;
-    box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+    box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.15);
   }
 }
 
 .bevel {
   .container(#58a);
   .folder-coner(#58a,2em,50deg);
+}
+
+.hyphen {
+  .container();
+  width: 7em;
+  padding: 1em 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.break-line {
+  dt,
+  dd {
+    display: inline;
+  }
+  dd {
+    margin-left: 0;
+    font-weight: 500;
+  }
+  dd + dd {
+    &::before {
+      content: ",";
+      font-weight: normal;
+    }
+  }
+  dd + dt {
+    &::before {
+      content: "\A";
+      white-space: pre;
+    }
+  }
+}
+
+.stripe-under-text {
+  padding: 0 .5em;
+  line-height: 1.5;
+  background: beige;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 50%, transparent 0);
+  background-size: auto 3em;
+  background-origin: content-box;
 }
