@@ -1,4 +1,4 @@
-@import "@/pages/jiemicss/index.less";
+@import '@/pages/jiemicss/index.less';
 
 .folder-coner(@background,@size,@angle: 30deg) {
   position: relative;
@@ -14,7 +14,7 @@
   @y: (@size / cos(@angle));
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -58,13 +58,13 @@
   }
   dd + dd {
     &::before {
-      content: ",";
+      content: ',';
       font-weight: normal;
     }
   }
   dd + dt {
     &::before {
-      content: "\A";
+      content: '\A';
       white-space: pre;
     }
   }
@@ -96,27 +96,27 @@
 
 .word-effect {
   .container(hsl(210,13%,40%));
-  color: hsl(210,13%,75%);
+  color: hsl(210, 13%, 75%);
   padding: 0.5em 1em;
   line-height: 2;
   text-shadow: 0 -1px 1px black;
   &-2 {
-   h1 {
-     font: 500%/1 Rockwell,serif;
-     background: deeppink;
-     color: white;
-     text {
-       fill: currentColor;
-     }
-     svg {
-       overflow: visible;
-     }
-     use {
-       stroke: black;
-       stroke-width: 6px;
-       stroke-linejoin: round;
-     }
-   }
+    h1 {
+      font: 500%/1 Rockwell, serif;
+      background: deeppink;
+      color: white;
+      text {
+        fill: currentColor;
+      }
+      svg {
+        overflow: visible;
+      }
+      use {
+        stroke: black;
+        stroke-width: 6px;
+        stroke-linejoin: round;
+      }
+    }
   }
   &-light {
     .container(#203);
@@ -128,14 +128,13 @@
     transition: 1s;
     &:hover {
       color: transparent;
-      text-shadow: 0 0 .1em #ffc,0 0 .3em #ffc;
+      text-shadow: 0 0 0.1em #ffc, 0 0 0.3em #ffc;
       // filter: blur(.1em);
     }
   }
   &-circle {
     .container();
     height: 10em;
-    font-size: 20px;
     font-weight: bold;
     margin: 3em auto;
     svg {
@@ -148,3 +147,9 @@
   }
 }
 
+.cursor {
+  .container(#58a);
+  &.disabled,:disabled,[disabled],[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}

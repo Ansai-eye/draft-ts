@@ -1,12 +1,5 @@
 import React, { useState, useContext, useReducer } from 'react';
-import PageContext from './page-context';
-
-interface IContextVal {
-  theme: string;
-  changeTheme: () => void;
-  lang: string;
-  changeLang: () => void;
-}
+import PageContext, { IContextVal } from './page-context';
 
 type CountState = {
   count: number;
@@ -82,5 +75,5 @@ function Body(): JSX.Element {
 }
 
 function Footer(): JSX.Element {
-  return <></>;
+  return <>here is footer</>;
 }

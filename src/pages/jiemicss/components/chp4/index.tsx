@@ -61,10 +61,14 @@ const Chapter4: React.FC = () => {
           <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
           <text>
             <textPath xlinkHref="#circle">
-              circular reasoning works because
+              circular reasoning works because hello moto
             </textPath>
           </text>
         </svg>
+      </section>
+      <hr />
+      <section className="cursor disabled">
+
       </section>
     </>
   );

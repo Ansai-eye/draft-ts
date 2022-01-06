@@ -1,5 +1,12 @@
 import React from 'react';
 
+interface IContextVal {
+  theme: string;
+  changeTheme: () => void;
+  lang: string;
+  changeLang: () => void;
+}
+
 const PageContext = React.createContext({
   theme: '',
   changeTheme: () => {
@@ -12,3 +19,4 @@ const PageContext = React.createContext({
 });
 
 export default PageContext;
+export { IContextVal };

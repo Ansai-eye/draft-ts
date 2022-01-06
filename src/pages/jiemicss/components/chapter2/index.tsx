@@ -27,7 +27,7 @@ const Chapter2: React.FC = () => {
       />
       <hr />
       <section className="cut-corner">
-        Hey, focus! You're supposed to be looking at my corners, not reading my
+        Hey, focus! You&lsquo;re supposed to be looking at my corners, not reading my
         text. The text is just placeholder!
       </section>
       <hr />
