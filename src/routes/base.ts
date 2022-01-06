@@ -1,8 +1,9 @@
-import { Home2, Jiemi } from '../pages';
+import { Home2, Jiemi, ReactSourceCode } from '../pages';
 
 export const baseUrl = {
   home2: '/home2',
   jiemi: '/jiemi',
+  sourceCode: '/sourceCode'
 };
 
 const baseRouters = [
@@ -16,6 +17,11 @@ const baseRouters = [
     component: Jiemi,
     root: [],
   },
+  {
+    path: baseUrl.sourceCode,
+    component: ReactSourceCode,
+    root: []
+  }
 ];
 
 export default baseRouters;

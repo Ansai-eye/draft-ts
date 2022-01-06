@@ -1,5 +1,6 @@
 import React from 'react';
-import { Home } from '../pages';
+// import { Home } from '../pages';
+import { Home } from '@/pages';
 import baseRouters from './base';
 
 export type RouterType = {

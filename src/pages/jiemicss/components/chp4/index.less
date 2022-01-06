@@ -1,0 +1,188 @@
+@import '@/pages/jiemicss/index.less';
+
+.folder-coner(@background,@size,@angle: 30deg) {
+  position: relative;
+  background: @background;
+  background: linear-gradient(
+    @angle - 180deg,
+    transparent @size,
+    @background 0
+  );
+  border-radius: 0.5em;
+
+  @x: (@size / sin(@angle));
+  @y: (@size / cos(@angle));
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(
+        to left bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.2) 0,
+        rgba(0, 0, 0, 0.4) 0
+      )
+      100% 0 no-repeat;
+    width: @y;
+    height: @x;
+    transform: translateY(@y - @x) rotate(2 * @angle - 90deg);
+    transform-origin: bottom right;
+    border-bottom-left-radius: inherit;
+    box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.15);
+  }
+}
+
+.bevel {
+  .container(#58a);
+  .folder-coner(#58a,2em,50deg);
+}
+
+.hyphen {
+  .container();
+  width: 7em;
+  padding: 1em 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.break-line {
+  dt,
+  dd {
+    display: inline;
+  }
+  dd {
+    margin-left: 0;
+    font-weight: 500;
+  }
+  dd + dd {
+    &::before {
+      content: ',';
+      font-weight: normal;
+    }
+  }
+  dd + dt {
+    &::before {
+      content: '\A';
+      white-space: pre;
+    }
+  }
+}
+
+.stripe-under-text {
+  padding: 0 0.5em;
+  line-height: 1.5;
+  background: beige;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 50%, transparent 0);
+  background-size: auto 3em;
+  background-origin: content-box;
+}
+
+.text-decoration {
+  .container(white);
+  word-break: break-all;
+  width: 9em;
+  text-align: justify;
+  hyphens: auto;
+  a[href] {
+    text-decoration: none;
+    background: linear-gradient(90deg, #a6a6a6 61.8%, transparent 0) repeat-x;
+    background-size: 0.4em 2px;
+    background-position: 0 1.05em;
+    text-shadow: 0.05em 0 white, -0.05em 0 white;
+  }
+}
+
+.word-effect {
+  .container(hsl(210,13%,40%));
+  color: hsl(210, 13%, 75%);
+  padding: 0.5em 1em;
+  line-height: 2;
+  text-shadow: 0 -1px 1px black;
+  &-2 {
+    h1 {
+      font: 500%/1 Rockwell, serif;
+      background: deeppink;
+      color: white;
+      text {
+        fill: currentColor;
+      }
+      svg {
+        overflow: visible;
+      }
+      use {
+        stroke: black;
+        stroke-width: 6px;
+        stroke-linejoin: round;
+      }
+    }
+  }
+  &-light {
+    .container(#203);
+    color: #ffc;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 6.18em;
+    transition: 1s;
+    &:hover {
+      color: transparent;
+      text-shadow: 0 0 0.1em #ffc, 0 0 0.3em #ffc;
+      // filter: blur(.1em);
+    }
+  }
+  &-circle {
+    .container();
+    height: 10em;
+    font-weight: bold;
+    margin: 3em auto;
+    svg {
+      display: block;
+      overflow: visible;
+    }
+    path {
+      fill: none;
+    }
+  }
+}
+
+.cursor {
+  .container(#58a);
+  &.disabled,:disabled,[disabled],[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
+
+input[type="checkbox"] + label::before {
+  content: '\a0';
+  display: inline-block;
+  vertical-align: .15em;
+  width: .8em;
+  height: .8em;
+  margin-right: .2em;
+  border-radius: .2em;
+  background: silver;
+  text-indent: .15em;
+  line-height: .65;
+}
+
+input[type="checkbox"]:checked + label::before {
+  content: '\2713';
+  background: yellowgreen;
+}
+
+input[type="checkbox"] {
+  position:absolute;
+  clip:rect(0,0,0,0);
+}
+
+input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 .1em .1em #58a;
+}
+
+input[type="checkbox"]:disabled + label::before {
+  background: gray;
+  box-shadow: none;
+  color: #555;
+}

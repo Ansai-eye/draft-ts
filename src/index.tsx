@@ -6,8 +6,8 @@ import App from './App';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* 使用了路由懒加载，所有要用suspense包裹 */}
-      <Suspense fallback={<div></div>}>
+      {/* 使用了路由懒加载，所以要用suspense包裹 */}
+      <Suspense fallback={<div>Loading</div>}>
         <Switch>
           <Route
             path="/"
