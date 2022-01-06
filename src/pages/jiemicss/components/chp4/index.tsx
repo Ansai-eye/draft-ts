@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.less';
 
 const Chapter4: React.FC = () => {
@@ -67,9 +68,15 @@ const Chapter4: React.FC = () => {
         </svg>
       </section>
       <hr />
-      <section className="cursor disabled">
-
+      <section className="cursor disabled"></section>
+      <hr />
+      <section className="checkbox-customize">
+        <input type="checkbox" name="checkbox" id="awsome" />
+        <label htmlFor="awsome">Awsome!</label>
       </section>
+      {
+        false && ReactDOM.createPortal(<div className="modal"></div>, document.body)
+      }
     </>
   );
 };
