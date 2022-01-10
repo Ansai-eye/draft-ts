@@ -1,16 +1,26 @@
-.container(@bgcolor:#fb3) {
+.container(@bgcolor:#fb3,@width:10em,@height:6.18em) {
   font-size: 16px;
-  width: 10em;
-  height: 6.18em;
+  width: @width;
+  height: @height;
   background: @bgcolor;
+}
+
+main {
+  transition: .6s filter;
+  &.de-emphasized {
+    filter: blur(3px) contrast(.8) brightness(.8);
+  }
 }
 
 .modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0,.8);
-  // box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);
+  width: 20em;
+  height: 12.36em;
+  padding: 1em .5em;
+  border-radius: 1em;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  transform:translate3d(-50%,-50%,0);
+  box-shadow: 0 0 10px rgb(0,0,0,.8);
 }

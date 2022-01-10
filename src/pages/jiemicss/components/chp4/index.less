@@ -186,3 +186,51 @@ input[type="checkbox"]:disabled + label::before {
   box-shadow: none;
   color: #555;
 }
+
+.scroll-reminder {
+  .container();
+  width: 20em;
+  height: 12.36em;
+  padding: 1em .5em;
+  border: 1px solid silver;
+  overflow-y: scroll;
+  background: linear-gradient(white 30%,transparent),
+    radial-gradient(at top,rgba(0,0,0,.2),transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 50px,100% 15px;
+  background-attachment: local,scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.iteractive-img {
+  .container(transparent,352px,12.36em);
+  display: inline-block;
+  position: relative;
+  >div {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width: 50%;
+    overflow:hidden;
+    // resize: horizontal;
+    // max-width: 100%;
+  }
+  img {
+    display: block;
+    max-height: 100%;
+  }
+  input {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    margin: 0;
+    width: 50%;
+    filter: contrast(.5);
+    mix-blend-mode: luminosity;
+    transform: scale(2);
+    transform-origin: left bottom;
+  }
+}
