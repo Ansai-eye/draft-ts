@@ -234,3 +234,33 @@ input[type="checkbox"]:disabled + label::before {
     transform-origin: left bottom;
   }
 }
+
+.self-adaption-content {
+  figure {
+    border: 1px solid #ccc;
+    padding: 1em;
+    max-width: 300px;
+    max-width: min-content;
+    margin: auto;
+    >img {
+      max-width: inherit;
+    }
+  }
+}
+
+footer {
+  background: #333;
+  padding: 1em;
+  padding: 1em calc(50% - 450px);
+  color: white;
+}
+
+.vertical-align {
+  .container(#fb3,30em,12.36em);
+  display: flex;
+  main {
+    .container(purple,auto,auto);
+    padding: 1em 1.5em;
+    margin: auto;
+  }
+}
