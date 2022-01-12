@@ -264,3 +264,62 @@ footer {
     margin: auto;
   }
 }
+
+.ease-ani {
+  .container(transparent,20em,40em);
+  margin: 2em 0 0;
+  border: 1px solid #ccc;
+  border-bottom: 1em solid green;
+  box-sizing: border-box;
+  .ball {
+    width: 2em;
+    height: 2em;
+    background: #fb3;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: bounce 3s cubic-bezier(.755, .05, .855, .06);
+  }
+
+  .callout {
+    display: block;
+    transition: .5s cubic-bezier(.25, .1, .3, 1.5) transform;
+    transform-origin: 1.4em -.4em;
+  }
+  input:not(:focus) + .callout {
+    transform: scale(0);
+    transition: .25s transform;
+  }
+  .loader {
+    width: 100px;
+    height: 100px;
+    background: url("../../../../assets/img/loading.jpg") 0 0;
+    background-size: auto 100px;
+    text-indent: 200%;
+    white-space:nowrap;
+    overflow:hidden;
+    animation: loader 1s infinite steps(8);
+  }
+}
+
+@keyframes loader {
+  to {
+    background-position: -800px 0;
+  }
+}
+
+@keyframes bounce {
+  60%,80%,to {
+    transform: translateY(37em);
+    animation-timing-function: ease;
+  }
+  70% { transform: translateY(33em); }
+  90% { transform: translateY(35em); }
+}
+
+@keyframes elastic-grow {
+  from {transform: scale(0);}
+  70% {
+    transform: scale(1.1);
+    animation-timing-function:cubic-bezier(.1, .25, 1, .25)
+  }
+}

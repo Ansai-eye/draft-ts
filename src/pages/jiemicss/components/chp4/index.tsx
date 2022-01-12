@@ -151,6 +151,14 @@ const Main: React.FC<MainProps> = (props: MainProps) => {
         <p>Center me, please!</p>
       </main>
     </section>
+    <section className="ease-ani">
+      <div className="ball"></div>
+      <label>
+        Your userName: <input type="text" />
+        <div className="callout">Only letters, numbers, underscores (_) nad hyphens (-) allowed!</div>
+      </label>
+      <div className="loader">Loading</div>
+    </section>
   </main>;
 };
 
