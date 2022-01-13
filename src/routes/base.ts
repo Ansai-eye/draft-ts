@@ -1,9 +1,10 @@
-import { Home2, Jiemi, ReactSourceCode } from '../pages';
+import { Home2, Jiemi, ReactSourceCode, CSSWorld } from '../pages';
 
 export const baseUrl = {
   home2: '/home2',
   jiemi: '/jiemi',
-  sourceCode: '/sourceCode'
+  sourceCode: '/sourceCode',
+  cssworld: '/cssworld',
 };
 
 const baseRouters = [
@@ -20,6 +21,11 @@ const baseRouters = [
   {
     path: baseUrl.sourceCode,
     component: ReactSourceCode,
+    root: []
+  },
+  {
+    path: baseUrl.cssworld,
+    component: CSSWorld,
     root: []
   }
 ];

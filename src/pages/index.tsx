@@ -5,5 +5,6 @@ const Home = lazy(() => import('./home'));
 const Home2 = lazy(() => import('./home2'));
 const Jiemi = lazy(() => import('./jiemicss'));
 const ReactSourceCode = lazy(() => import('./react-source-code'));
+const CSSWorld = lazy(() => import('./css-world'));
 
-export { Home, Home2, Jiemi, ReactSourceCode };
+export { Home, Home2, Jiemi, ReactSourceCode, CSSWorld };
