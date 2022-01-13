@@ -1,6 +1,7 @@
 import React, { useState, Dispatch, SetStateAction, ReactNode, useEffect, InputHTMLAttributes } from 'react';
 import testimg from '@/assets/img/test.jpg';
 import testimg2 from '@/assets/img/test2.jpg';
+import avatar from '@/assets/img/avatar.jpg';
 import './index.less';
 
 type MainProps = {
@@ -126,6 +127,7 @@ const Main: React.FC<MainProps> = (props: MainProps) => {
       <h2>Scroll reminder</h2>
       <h2>Scroll reminder</h2>
     </section>
+    <section id="hash" className="highlight">hash here</section>
     <section className="iteractive-img">
       <img src={testimg} alt="Before" />
       <img src={testimg2} alt="After" />
@@ -159,6 +161,10 @@ const Main: React.FC<MainProps> = (props: MainProps) => {
       </label>
       <div className="loader">Loading</div>
     </section>
+    <section className="type">
+      <h1>CSS is awesome!</h1>
+    </section>
+    <section className="panoramic"></section>
   </main>;
 };
 
