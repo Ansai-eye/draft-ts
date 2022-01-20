@@ -1,0 +1,80 @@
+.container(@bgcolor:#fb3,@width:10em,@height:6.18em) {
+  font-size: 16px;
+  width: @width;
+  height: @height;
+  background: @bgcolor;
+}
+
+a:active {
+  background: red;
+  color: white;
+}
+
+.float-left {
+  position:absolute;
+  // .container();
+  background: #fb3;
+  padding: 1em;
+  margin: 1em;
+  left: 2em;
+  right: 2em;
+}
+
+.clear {
+  position: relative;
+}
+.clear::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.box {
+  text-align: center;
+  .container();
+  padding: 1em;
+  .content {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+.ao {
+  display: inline-block;
+  width: 0;
+  &::before {
+    content: 'love 你 love';
+    outline: 2px solid #cd0000;
+    color: #fff;
+  }
+}
+
+.tu {
+  display: inline-block;
+  width: 0;
+  &::before {
+    content: '你 love 你';
+    outline: 2px solid #cd0000;
+    color: #fff;
+  }
+}
+
+.height-auto {
+  background: #fb3;
+  height: 100px;
+  min-height: 100px;
+  transition: min-height .3s;
+  &:hover {
+    min-height: 200px;
+  }
+  .child {
+    height: 100%;
+  }
+}
+
+.ghost-node {
+  background: #fb3;
+  span {
+    display: inline-block;
+  }
+}
