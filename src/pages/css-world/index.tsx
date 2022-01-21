@@ -37,6 +37,16 @@ const CSSWorld: React.FC = () => {
     <div className="ghost-node">
       <span></span>
     </div>
+    <div>helloo</div>
+    <div className="dot">
+      正在加载中<span>...</span>
+    </div>
+    <div className="quotes">
+      <p lang="ch"><span>这本书很赞！</span></p>
+      <p lang="en"><span>this book is very good!</span></p>
+      <p lang="no"><span>denne bog er fantastisk!</span></p>
+    </div>
+    <div className="counter"></div>
   </>;
 };
 

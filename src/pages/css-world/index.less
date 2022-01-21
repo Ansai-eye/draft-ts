@@ -36,6 +36,9 @@ a:active {
   .content {
     display: inline-block;
     text-align: left;
+    &::after {
+      content: '伪元素生成的内容';
+    }
   }
 }
 
@@ -76,5 +79,64 @@ a:active {
   background: #fb3;
   span {
     display: inline-block;
+  }
+}
+
+div:empty {
+  height: 2em;
+  border: 1px dashed;
+}
+
+.dot {
+  span {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -.25em;
+    overflow: hidden;
+    &::before {
+      display: block;
+      font-size: 20px;
+      color: red;
+      content: '...\A..\A.';
+      white-space: pre-wrap;
+      animation: dot 3s infinite step-start both;
+    }
+  }
+}
+
+@keyframes dot {
+  33% { transform: translateY(-2em); }
+  66% { transform: translateY(-1em); }
+}
+
+.quotes {
+  :lang(ch) > span {
+    quotes: '“' '”';
+  }
+  :lang(en) > span {
+    quotes: '"' '"';
+  }
+  :lang(no) > span {
+    quotes: '《' '》';
+  }
+  span {
+    &::after {
+      content: close-quote;
+    }
+    &::before {
+      content: open-quote;
+    }
+  }
+}
+
+.counter {
+  counter-reset: wangxiaoer 2 wangxiaosan 3;
+  &::before {
+    content: counter(wangxiaoer);
+  }
+  &::after {
+    content: counter(wangxiaosan);
   }
 }
