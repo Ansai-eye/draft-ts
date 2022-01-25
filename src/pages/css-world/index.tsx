@@ -47,6 +47,19 @@ const CSSWorld: React.FC = () => {
       <p lang="no"><span>denne bog er fantastisk!</span></p>
     </div>
     <div className="counter"></div>
+    <div className="login-and-registry">
+      <a href="http://www.baidu.com">登录</a>
+      <a href="http://www.baidu.com">注册</a>
+    </div>
+    <div className="rectangle">
+      <img src="https://demo.cssworld.cn/images/4/cover-5-1.jpg" alt="test"/>
+    </div>
+    <button id="btn"></button>
+    <label htmlFor="btn">按钮</label>
+
+    <div className="father">
+      <div className="son"></div>
+    </div>
   </>;
 };
 
