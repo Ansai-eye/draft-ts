@@ -52,7 +52,7 @@ const CSSWorld: React.FC = () => {
       <a href="http://www.baidu.com">注册</a>
     </div>
     <div className="rectangle">
-      <img src="https://demo.cssworld.cn/images/4/cover-5-1.jpg" alt="test"/>
+      <img src="https://demo.cssworld.cn/images/4/cover-5-1.jpg" alt="test" />
     </div>
     <button id="btn"></button>
     <label htmlFor="btn">按钮</label>
@@ -60,6 +60,10 @@ const CSSWorld: React.FC = () => {
     <div className="father">
       <div className="son"></div>
     </div>
+    <div className="box-dot">
+      <div className="dotted"></div>
+    </div>
+    <div className="triangle"></div>
   </>;
 };
 
