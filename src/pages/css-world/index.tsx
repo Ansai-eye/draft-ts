@@ -64,6 +64,12 @@ const CSSWorld: React.FC = () => {
       <div className="dotted"></div>
     </div>
     <div className="triangle"></div>
+    <div className="x-height">
+      Hello 中国人<span>x</span><i className="icon-arrow"></i>
+    </div>
+    <div className="test-div-height">
+      我是div
+    </div>
   </>;
 };
 
