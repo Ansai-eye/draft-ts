@@ -217,9 +217,9 @@ label {
 .x-height {
   .icon-arrow {
     display: inline-block;
-    width: 20px;
+    width: 50px;
     height: 1ex;
-    background: url('../../assets/icon/arrow.svg') no-repeat center/20px 20px;
+    background: url('../../assets/icon/arrow.svg') no-repeat center/50px 50px;
   }
 }
 
@@ -227,5 +227,46 @@ label {
   border: 1px solid #cd0000;
   background: #eee;
   font-size: 16px;
-  line-height: 0;
+  line-height: 2;
+}
+
+.dib-baseline {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #cad5eb;
+  background-color: #f0f3f9;
+}
+
+.dialog-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.5);
+  text-align: center;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: auto;
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .dialog {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: 6px;
+    background: #fff;
+    .content {
+      width: 240px;
+      height: 120px;
+      padding: 20px;
+    }
+  }
 }

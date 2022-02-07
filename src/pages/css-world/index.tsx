@@ -70,6 +70,14 @@ const CSSWorld: React.FC = () => {
     <div className="test-div-height">
       我是div
     </div>
+    <span className="dib-baseline"></span>
+    <span className="dib-baseline">x-baseline<sup>[1]</sup></span>
+    <span className="dib-baseline">NH<sub>4</sub>HCO<sub>3</sub><sup>[2]</sup></span>
+    <div className="dialog-container">
+      <div className="dialog">
+        <div className="content">内容区域</div>
+      </div>
+    </div>
   </>;
 };
 
