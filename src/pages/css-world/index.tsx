@@ -73,11 +73,38 @@ const CSSWorld: React.FC = () => {
     <span className="dib-baseline"></span>
     <span className="dib-baseline">x-baseline<sup>[1]</sup></span>
     <span className="dib-baseline">NH<sub>4</sub>HCO<sub>3</sub><sup>[2]</sup></span>
-    <div className="dialog-container">
-      <div className="dialog">
-        <div className="content">内容区域</div>
+    {
+      false && <div className="dialog-container">
+        <div className="dialog">
+          <div className="content">内容区域</div>
+        </div>
       </div>
+    }
+    <ul className="test-float">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <a href="#">返回顶部</a>
+    <div className="test-position-absolute">
+      hello absolute
     </div>
+    <div className="test-placeholder">
+      <label className="placeholder" htmlFor="text">占位符</label>
+      <input type="text" id="text" />
+    </div>
+
+    <form>
+      <input type="submit" id="someId" className="clip"/>
+      <label htmlFor="someId">提交</label>
+    </form>
   </>;
 };
 
