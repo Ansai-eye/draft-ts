@@ -1,26 +1,60 @@
-import React, { useState } from 'react';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import React, { Component } from 'react';
+import './index.less';
 
-const ReactSourceCode: React.FC = () => {
-  return <Father>
-    <Child />
-  </Father>;
-};
+interface IProps {
+  value: number | string
+}
 
-type FatherProps = {
-  children?: React.ReactNode;
-};
+class ClassComponent extends Component<IProps> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <div className="class-component">
+        <div>this is a class Component</div>
+        <div>prop value is: {this.props.value}</div>
+      </div>
+    );
+  }
+}
 
-const Child: React.FC = () => {
-  console.log('Child');
-  return <div>Children</div>;
-};
+function FunctionComponent(props: IProps) {
+  return (
+    <div className="function-component">
+      <div>this is a function Component</div>
+      <div>prop value is: {props.value}</div>
+    </div>
+  );
+}
 
-const Father: React.FC = (props: FatherProps) => {
-  const [num, setNum] = useState<number>(0);
-  return <div onClick={() => setNum(num + 1)}>
-    {num}
-    {props.children}
-  </div>;
-};
+const Jsx = () => (
+  <div className="deep1-box">
+    <ClassComponent value={666} />
+    <FunctionComponent value={100} />
+    <div className="deep2-box-1">
+      <a href="https://github.com/zh-lx/mini-react">mini react link</a>
+      <p style={{ color: 'red' }}> this is a red p</p>
+      <div className="deep3-box">
+        {true && <div>condition true</div>}
+        {false && <div>condition false</div>}
+        <input
+          type="button"
+          value="say hello"
+          onClick={() => {
+            alert('hello');
+          }}
+        />
+      </div>
+    </div>
+    <div className="deep2-box-2">
+      {['item1', 'item2', 'item3'].map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </div>
+  </div>
+);
 
-export default ReactSourceCode;
+export default Jsx;
