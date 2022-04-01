@@ -1,0 +1,95 @@
+.en-write-line(@beforeTop: 34px,@beforeHeight:25px,@afterBottom:13px,@afterHeight:12px) {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: @beforeTop;
+    height: @beforeHeight;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: @afterBottom;
+    height: @afterHeight;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+}
+
+.x-font {
+  background: rgba(0,0,0,.2);
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    border-top: 2px solid red;
+  }
+}
+
+.x-font-alone {
+  font-family: 'Fira Code';
+  font-size: 100px;
+}
+
+.font-compaire {
+  font-size: 100px;
+  position: relative;
+  background: #c8e3fb;
+  & + .font-compaire {
+    margin-top: 40px;
+  }
+  &.en-write-line-1 {
+    .en-write-line(30px,25px,11px,13px);
+  }
+  &.en-write-line-2 {
+    .en-write-line(25px,25px,0px,24px);
+  }
+  &.en-write-line-3 {
+    .en-write-line(25px,21px,9px,20px);
+  }
+  .median {
+    border-top: 2px solid #00b3ed;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+  }
+  .x-font-1{
+    // font-family: 'Impact';
+    font-family: 'simsun';
+  }
+  .x-font-2 {
+    font-family: 'Microsoft Yahei';
+  }
+  .x-font-3 {
+    font-family: 'Fira Code';
+  }
+}
+
+.demo-line-height {
+  background: antiquewhite;
+  font-size: 0;
+  font-size: 20px;
+  line-height: 20px;
+  line-height: 0;
+}
+
+.line-distance {
+  font-family: 'simsun';
+  font-size: 80px;
+  line-height: 120px;
+  background: #ff2f00;
+  max-width: 300px;
+  text-align: center;
+  span {
+    background:white;
+  }
+}
