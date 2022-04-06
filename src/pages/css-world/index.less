@@ -1,3 +1,4 @@
+@marginBottom: 40px;
 .en-write-line(@beforeTop: 34px,@beforeHeight:25px,@afterBottom:13px,@afterHeight:12px) {
   &::before {
     content: '';
@@ -22,9 +23,17 @@
 }
 
 .container {
-  border: 1px solid black;
+  outline: 1px solid #aaa;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: @marginBottom;
+}
+
+.strut {
+  background: #cd0000;
+  margin-bottom: @marginBottom;
+  > span {
+    display: inline-block;
+  }
 }
 
 .x-font {
@@ -51,7 +60,7 @@
   position: relative;
   background: #c8e3fb;
   & + .font-compaire {
-    margin-top: 40px;
+    margin-top: @marginBottom;
   }
   &.en-write-line-1 {
     .en-write-line(30px,25px,11px,13px);
@@ -97,5 +106,24 @@
   text-align: center;
   span {
     background:white;
+  }
+}
+
+.demo-block-line-height {
+  outline: 1px solid #aaa;
+	text-align: center;
+	line-height: 192px;
+}
+
+.demo-vertical-align {
+  line-height: 32px;
+  > span {
+    background: #ccc;
+  }
+  span.x {
+    font-size: 16px;
+  }
+  span.text {
+    font-size: 24px;
   }
 }
