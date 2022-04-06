@@ -4,7 +4,12 @@ import './index.less';
 const CSSWorld: React.FC = () => {
   const str = '中国x Sphinx Aghfy';
   const strArr = str.split('');
+  const len = 3000;
   return <>
+    {/* <div className="container">
+      <span>x</span>
+      <img src="https://demo.cssworld.cn/images/common/m/1.jpg" />
+    </div>
     <div className="font-compaire en-write-line-1">
       <div className="median"></div>
       {
@@ -23,12 +28,17 @@ const CSSWorld: React.FC = () => {
       <span className="x-font x-font-3">中国x Sphinx Aghfy</span>
     </div>
     <span className="x-font x-font-alone x-font-3">中国x Sphinx Aghfy</span>
-    <div className="demo-line-height">
-      {/* <span>hello</span> */}
-    </div>
+    <div className="demo-line-height"></div>
     <div className="line-distance">
       <span>sphinx</span>
-    </div>
+    </div> */}
+    <ul>
+      {
+        Array(len).fill(0).map((item,index) => {
+          return <li key={index}>{index}</li>;
+        })
+      }
+    </ul>
   </>;
 };
 
