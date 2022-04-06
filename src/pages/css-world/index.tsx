@@ -1,8 +1,14 @@
 import React from 'react';
+
+import { usePageTitle } from '@/hooks';
+
 import './index.less';
 
+
 const CSSWorld: React.FC = () => {
+  usePageTitle('内联元素与流');
   const str = '中国x Sphinx Aghfy';
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const strArr = str.split('');
   return <>
     <div className="container">
