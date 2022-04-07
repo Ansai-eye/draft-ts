@@ -12,23 +12,23 @@ const CSSWorld: React.FC = () => {
   const strArr = str.split('');
   return <>
     <div className="container">
-      <img src="https://demo.cssworld.cn/images/common/m/1.jpg" />
+      xy<img src="https://demo.cssworld.cn/images/common/m/1.jpg" />
     </div>
 
-    {/* <div className="strut"><span></span></div> */}
+    <div className="strut"><span></span></div>
 
     {/* 行高 */}
-    {/* <div className="demo-line-height">xxx</div> */}
+    <div className="demo-line-height">xxx</div>
 
     {/* 行距，半行距 */}
-    {/* <div className="line-distance">
+    <div className="line-distance">
       <span>sphinx</span>
-    </div> */}
+    </div>
     {/* <div className="line-distance">
       <span>sphinx</span>
     </div> */}
 
-    {/* <div className="font-compaire en-write-line-1">
+    <div className="font-compaire en-write-line-1">
       <div className="median"></div>
       {
         strArr.map((item, index) => {
@@ -44,24 +44,24 @@ const CSSWorld: React.FC = () => {
           return <span key={index} className="x-font x-font-2">{item}</span>;
         })
       }
-    </div> */}
+    </div>
 
-    {/* <div className="font-compaire en-write-line-3">
+    <div className="font-compaire en-write-line-3">
       <div className="median"></div>
       <span className="x-font x-font-3">中国x Sphinx Aghfy</span>
-    </div> */}
+    </div>
 
-    {/* <span className="x-font x-font-alone x-font-3">中国x Sphinx Aghfy</span> */}
+    <span className="x-font x-font-alone x-font-3">中国x Sphinx Aghfy</span>
 
     {/* 行高对块级元素的影响 */}
-    {/* <div className="demo-block-line-height">
+    <div className="demo-block-line-height">
       x<img height="96" src="https://demo.cssworld.cn/images/common/m/1.jpg" />
-    </div> */}
+    </div>
 
     {/* vertical-align示例*/}
-    {/* <div className="demo-vertical-align">
+    <div className="demo-vertical-align">
       <span className="x">x</span>&nbsp;<span className="text">文本x</span>
-    </div> */}
+    </div>
   </>;
 };
 
