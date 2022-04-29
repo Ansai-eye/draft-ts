@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { Component } from 'react';
-import './index.less';
+// import './index.less';
 
 interface IProps {
   value: number | string
