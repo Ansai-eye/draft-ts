@@ -85,6 +85,11 @@ const CSSNewWorld: React.FC = () => {
       hello inset
     </div> */}
     <div className="demo-border"></div>
+    <div className="demo-position-sticky"></div>
+    <div className="demo-font">
+      <p>&#x263a;</p>
+      <p className="emoji">&#x263a;</p>
+    </div>
   </>;
 };
 
