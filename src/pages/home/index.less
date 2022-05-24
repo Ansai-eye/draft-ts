@@ -1,0 +1,26 @@
+.decoration {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 3px;
+}
+
+section {
+  // text-decoration: dashed underline;
+  // p {
+  //   text-decoration: wavy overline;
+  // }
+}
+
+wavy {
+  display: block;
+  height: .5em;
+  white-space: nowrap;
+  letter-spacing: 100vw;
+  padding-top: .5em;
+  overflow: hidden;
+  &::before {
+    content: '\2000\2000';
+    text-decoration: overline;
+    text-decoration-style: wavy;
+  }
+}
