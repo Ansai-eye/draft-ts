@@ -50,7 +50,7 @@ interface IMsgItem {
   msg: IMsg
 }
 
-const MsgItem: React.FC = (props: IMsgItem) => {
+const MsgItem = (props: IMsgItem) => {
   const { msg } = props;
   return <section className="msg-item" data-self={msg.dataSelf}>
     <img className="msg-avator" alt={msg.avatorAlt} src={msg.avatorUrl} />
@@ -90,6 +90,11 @@ const CSSNewWorld: React.FC = () => {
       <p>&#x263a;</p>
       <p className="emoji">&#x263a;</p>
     </div>
+    <div className="demo-background">
+      <button className="btn-add"></button>
+      <button className="btn-sub"></button>
+    </div>
+    <p className="text-gradient">我是渐变文字</p>
   </>;
 };
 
