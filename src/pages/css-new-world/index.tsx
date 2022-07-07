@@ -95,6 +95,33 @@ const CSSNewWorld: React.FC = () => {
       <button className="btn-sub"></button>
     </div>
     <p className="text-gradient">我是渐变文字</p>
+    <div className="demo-opacity">
+      <div className="father opacity1">
+        <div className="son"></div>
+      </div>
+      <div className="father opacity2">
+        <div className="son"></div>
+      </div>
+    </div>
+    <div className="demo-capitalize">
+      <p>hello</p>
+      <p>world</p>
+    </div>
+    <div className="demo-auto-button-color">
+      <button className="button">hello moto</button>
+    </div>
+    <div className="pie-simple p10">
+      <div className="pie-left"></div>
+      <div className="pie-right"></div>
+    </div>
+    <div className="pie-simple p40">
+      <div className="pie-left"></div>
+      <div className="pie-right"></div>
+    </div>
+    <div className="pie-simple p80">
+      <div className="pie-left"></div>
+      <div className="pie-right"></div>
+    </div>
   </>;
 };
 

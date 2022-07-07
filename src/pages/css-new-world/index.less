@@ -2,14 +2,16 @@
 @font-face {
   font-family: Emoji;
   src: local("Apple Color Emoji"),
-  local("Segoe UI Emoji"),
-  local("Segoe UI Symbol"),
-  local("Noto Color Emoji");
+    local("Segoe UI Emoji"),
+    local("Segoe UI Symbol"),
+    local("Noto Color Emoji");
   unicode-range: U+1F000-1F644, U+203C-3299;
 }
+
 .emoji {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Emoji, Helvetica, Arial, sans-serif;
 }
+
 // button {
 //   height: 40px;
 //   width: -webkit-fill-available;
@@ -31,10 +33,12 @@
 .msg-list {
   width: 414px;
   max-width: 100vw;
-  margin-left: auto; margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #ebebeb;
   overflow: hidden;
 }
+
 .msg-header {
   line-height: 48px;
   color: #fff;
@@ -43,6 +47,7 @@
   background-color: #222;
   margin-bottom: 10px;
 }
+
 .msg-item {
   display: flex;
   padding: 7px;
@@ -51,22 +56,26 @@
   // https://stackoverflow.com/questions/64565180/how-to-prevent-postcss-preset-env-from-removing-css-logical-properties
   margin-inline-end: 44px;
 }
+
 .msg-avator {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .msg-info {
   flex: 1;
   text-align: start;
   padding: 0 10px;
   overflow: hidden;
 }
+
 .msg-user {
   font-size: 13px;
   color: #949ead;
 }
+
 .msg-txt {
   position: relative;
   width: -moz-fit-content;
@@ -80,11 +89,13 @@
   margin: 5px 0 0;
   border-radius: 6px;
 }
-.msg-txt > p {
+
+.msg-txt>p {
   margin: 0;
   unicode-bidi: plaintext;
 }
-.msg-user + .msg-txt::before{
+
+.msg-user+.msg-txt::before {
   content: "";
   position: absolute;
   border: .5rem solid transparent;
@@ -93,9 +104,11 @@
   margin-inline-start: calc(-.45rem - 1em);
   top: 4px;
 }
+
 .msg-item[data-self] {
   direction: rtl;
 }
+
 .msg-item[data-self] .msg-txt {
   background: #9CE553;
   border-color: #9CE553;
@@ -113,14 +126,15 @@
   border: 40px solid deepskyblue;
 }
 
-.btn-add, .btn-sub {
+.btn-add,
+.btn-sub {
   width: 1.5rem;
   height: 1.5rem;
   border: 1px solid gray;
   color: dimgray;
   padding: 0;
   background: linear-gradient(currentColor, currentColor) no-repeat center / .875em 2px,
-              linear-gradient(currentColor, currentColor) no-repeat center / 2px .875em;
+    linear-gradient(currentColor, currentColor) no-repeat center / 2px .875em;
 }
 
 .btn-sub {
@@ -133,4 +147,108 @@
   background: linear-gradient(deepskyblue, deeppink);
   background-clip: text;
   color: transparent;
+}
+
+.demo-opacity {
+  .father {
+    width: 120px;
+  }
+
+  .son {
+    height: 120px;
+    background: deepskyblue;
+  }
+
+  .opacity1,
+  .opacity1 .son {
+    opacity: 0.5;
+  }
+
+  .opacity2 {
+    opacity: 0.25;
+  }
+
+}
+
+.demo-capitalize {
+  p {
+    text-transform: capitalize;
+  }
+}
+
+:root {
+  /* 定义RGB变量 */
+  --red: 44;
+  --green: 135;
+  --blue: 255;
+  /* 亮度算法 */
+  --lightness: calc((var(--red) * 0.2126 + var(--green) * 0.7152 + var(--blue) * 0.0722) / 255);
+}
+
+.button {
+  /* 固定样式 */
+  border: .2em solid;
+  /* 背景颜色 */
+  background: rgb(var(--red), var(--green), var(--blue));
+  /* 文字颜色，只可能是黑色或者白色 */
+  color: hsl(0, 0%, calc((var(--lightness) - 0.5) * -999999%));
+  /* 文字阴影，黑色文字才会出现 */
+  text-shadow: 1px 1px rgba(calc(var(--red) + 50), calc(var(--green) + 50), calc(var(--blue) + 50), calc((var(--lightness) - 0.5) * 9999));
+  /* 边框样式，亮度大于0.8才会出现 */
+  border-color: rgba(calc(var(--red) - 50), calc(var(--green) - 50), calc(var(--blue) - 50), calc((var(--lightness) - 0.8) * 100));
+}
+
+.pie-simple {
+  width: 128px;
+  height: 128px;
+  background: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+  &.p10 {
+    --percent: 10;
+  }
+  &.p40 {
+    --percent: 40;
+  }
+  &.p80 {
+    --percent: 80;
+  }
+}
+
+.pie-left,
+.pie-right {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.pie-left::before,
+.pie-right::before,
+.pie-right::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: deepskyblue;
+}
+
+.pie-left::before {
+  left: 100%;
+  transform-origin: left;
+  transform: rotate(calc(3.6deg * (var(--percent) - 50)));
+  /* 比例小于或等于50%的时候左半园隐藏 */
+  opacity: calc(99999 * (var(--percent) - 50));
+}
+
+.pie-right::before {
+  right: 100%;
+  transform-origin: right;
+  transform: rotate(calc(3.6deg * var(--percent)));
+}
+
+.pie-right::after {
+  /* 比例大于50%的时候左半园一直显示 */
+  opacity: calc(99999 * (var(--percent) - 50));
 }
