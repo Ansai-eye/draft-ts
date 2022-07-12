@@ -66,6 +66,9 @@ const MsgItem = (props: IMsgItem) => {
 const CSSNewWorld: React.FC = () => {
   usePageTitle('CSS新世界');
   return <>
+    <div className="header">
+      <a href="../" className="logo" title="回到demo首页"></a>
+    </div>
     <button>CSS新世界</button>
     <p>感谢您的支持</p>
     <div className="logic-prop">
@@ -122,6 +125,14 @@ const CSSNewWorld: React.FC = () => {
       <div className="pie-left"></div>
       <div className="pie-right"></div>
     </div>
+    <section className="demo-box-shadow">
+      <button className="normal">正常</button>
+      <button className="primary">主要</button>
+      <button className="warning">警示</button>
+    </section>
+    <div className="demo-multi-border"></div>
+    <div className="demo-loading"></div>
+    {/* <div id="guide-overlap"></div> */}
   </>;
 };
 

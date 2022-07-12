@@ -24,6 +24,27 @@
 //   outline: 1px dotted;
 // }
 
+body {
+  margin: 0;
+  color: #333;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+}
+
+.header {
+  height: 66px;
+  background: #a0b3d6;
+
+  a.logo {
+    position: absolute;
+    width: 239px;
+    height: 66px;
+    background: url("https://demo.cssworld.cn/common/css/images/logo2.png") no-repeat 30px 50%;
+    background-size: 158px 30px;
+  }
+}
+
 .logic-prop {
   button {
     margin-inline-end: 10px;
@@ -204,12 +225,15 @@
   background: #eee;
   border-radius: 50%;
   overflow: hidden;
+
   &.p10 {
     --percent: 10;
   }
+
   &.p40 {
     --percent: 40;
   }
+
   &.p80 {
     --percent: 80;
   }
@@ -251,4 +275,87 @@
 .pie-right::after {
   /* 比例大于50%的时候左半园一直显示 */
   opacity: calc(99999 * (var(--percent) - 50));
+}
+
+.demo-box-shadow {
+  margin-block-start: 20px;
+
+  button {
+    height: 40px;
+    min-width: 80px;
+    padding: 0 10px;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+
+    &:active {
+      box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .1);
+    }
+  }
+
+  .normal {
+    // 模拟边框
+    background-color: #fff;
+    box-shadow: inset 1px 0 #a2a9b6, inset -1px 0 #a2a9b6, inset 0 1px #a2a9b6, inset 0 -1px #a2a9b6;
+  }
+
+  .primary {
+    color: #fff;
+    background-color: #2a80eb;
+  }
+
+  .warning {
+    color: #fff;
+    background-color: #eb4646;
+  }
+
+  button+button {
+    margin-inline-start: 5px;
+  }
+}
+
+#guide-overlap {
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  border-radius: 50%;
+  box-shadow: rgb(0 0 0 / 75%) 0px 0px 0px 9999px;
+  z-index: 100;
+  width: 239px;
+  height: 66px;
+  left: 0px;
+  top: 0px;
+}
+
+.demo-multi-border {
+  margin: 50px auto;
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: deepskyblue;
+  box-shadow: 0 0 0 4px #fff,
+    0 0 0 8px deeppink,
+    0 0 0 12px yellow,
+    0 0 0 16px purple;
+}
+
+.demo-loading {
+  margin: 50px auto;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  color: rgba(0, 0, 0, .4);
+  box-shadow: 0 -10px rgba(0, 0, 0, .9),
+    10px 0,
+    0 10px,
+    -10px 0 rgba(0,0,0,.7),
+    -7px -7px rgba(0,0,0,.8),
+    7px -7px rgba(0,0,0,1),
+    7px 7px,
+    -7px 7px;
+  animation: spin 1s steps(8) infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
