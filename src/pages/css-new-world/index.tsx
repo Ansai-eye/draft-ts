@@ -140,6 +140,9 @@ const CSSNewWorld: React.FC<IProps> = (props) => {
     <div className="demo-multi-border"></div>
     <div className="demo-loading"></div>
     {/* <div id="guide-overlap"></div> */}
+    <div className="demo-calc mt80 mb80">
+      <div className="bar bar60"></div>
+    </div>
   </>;
 };
 
