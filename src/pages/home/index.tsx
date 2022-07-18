@@ -3,6 +3,38 @@ import React, { useState } from 'react';
 import { usePow, useCreation } from '@/hooks';
 import './index.less';
 
+/* Make all properties in T optional */
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+};
+
+/* Make all properties in T required */
+type Required<T> = {
+  [P in keyof T]-?: T[P];
+};
+
+type ReadOnly<T> = {
+  readonly [P in keyof T]: T[P];
+}
+
+interface IPerson {
+  name?: string;
+  age?: number;
+  height?: number;
+}
+
+const person: Partial<IPerson> = {
+  name: 'zhangsan'
+};
+
+const person2: Required<IPerson> = {
+  name: 'lisi',
+  age: 20,
+  height: 176,
+};
+
+console.log('person======', person);
+
 export default function Home(): JSX.Element {
   const [flag, setFlag] = useState<boolean>(false);
   const data = usePow([1, 2, 3]);

@@ -4,12 +4,20 @@ import { usePageTitle } from '@/hooks';
 
 import './index.less';
 
+interface IProps {
+  name?: string
+}
+
 interface IMsg {
   avatorUrl: string
   avatorAlt?: string
   name: string
   txt?: string
   dataSelf?: boolean
+}
+
+interface IMsgItem {
+  msg: IMsg
 }
 
 const msgList: IMsg[] = [
@@ -46,10 +54,6 @@ const msgList: IMsg[] = [
   },
 ];
 
-interface IMsgItem {
-  msg: IMsg
-}
-
 const MsgItem = (props: IMsgItem) => {
   const { msg } = props;
   return <section className="msg-item" data-self={msg.dataSelf}>
@@ -63,9 +67,12 @@ const MsgItem = (props: IMsgItem) => {
   </section>;
 };
 
-const CSSNewWorld: React.FC = () => {
+const CSSNewWorld: React.FC<IProps> = (props) => {
+  const { name, children } = props;
+  console.log('children=====', children);
   usePageTitle('CSS新世界');
   return <>
+    <div>{name}</div>
     <div className="header">
       <a href="../" className="logo" title="回到demo首页"></a>
     </div>
