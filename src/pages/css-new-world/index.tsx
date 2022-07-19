@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { usePageTitle } from '@/hooks';
+import { Carousel } from './components';
 
 import './index.less';
 
@@ -51,6 +52,45 @@ const msgList: IMsg[] = [
     name: '唯我成幸',
     txt: '大家有什么想要了解的吗？',
     dataSelf: true
+  },
+];
+
+const carouselImgs = [
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-1.jpg',
+    alt: 'pic1'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-2.jpg',
+    alt: 'pic2'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-3.jpg',
+    alt: 'pic3'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-4.jpg',
+    alt: 'pic4'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-5.jpg',
+    alt: 'pic5'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-6.jpg',
+    alt: 'pic6'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-7.jpg',
+    alt: 'pic7'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-8.jpg',
+    alt: 'pic8'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-9.jpg',
+    alt: 'pic9'
   },
 ];
 
@@ -143,6 +183,11 @@ const CSSNewWorld: React.FC<IProps> = (props) => {
     <div className="demo-calc mt80 mb80">
       <div className="bar bar60"></div>
     </div>
+    <div className="demo-jianbian mb80">
+      <img />
+    </div>
+    <div className="demo-radial"></div>
+    <Carousel imgs={carouselImgs} />
   </>;
 };
 

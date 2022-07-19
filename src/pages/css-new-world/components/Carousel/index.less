@@ -1,0 +1,30 @@
+.xkd(@n, @i: 1) when (@i =< @n) {
+  .piece-@{i} {
+    --index: @i;
+  }
+  .xkd(@n, (@i + 1));
+}
+
+.xkd(9);
+
+.stage {
+  perspective: 800px;
+  padding: 50px 0;
+}
+
+.container {
+  width: 128px; height: 90px;
+  margin: auto;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.piece {
+  width: inherit; height: inherit;
+  position: absolute;
+  left: 0; bottom: 0;
+  transform: rotateY(calc(var(--index) * 40deg)) translateZ(195.839px);
+  /* Chrome bug fix需要 */
+  box-shadow: 0 0 transparent;
+}

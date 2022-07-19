@@ -395,3 +395,20 @@ body {
     text-align: right;
   }
 }
+
+.demo-jianbian {
+  width: 500px; height: 120px;
+  // background: linear-gradient(white, deepskyblue);
+  img:not([src]) {
+    width: 200px; height: 100px;
+    background-color: #eee;
+    background-image: linear-gradient(to right bottom, transparent calc(50% - 1px), #ccc calc(50% - 1px), #ccc, transparent calc(50% + 1px)),
+      linear-gradient(to top right, transparent calc(50% - 1px), #ccc calc(50% - 1px), #ccc, transparent calc(50% + 1px));
+  }
+}
+
+.demo-radial {
+  width: 300px; height: 150px;
+  margin: 0 auto;
+  background-image: radial-gradient(100px at left top, white, deepskyblue);
+}
