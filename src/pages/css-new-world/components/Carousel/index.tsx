@@ -30,7 +30,7 @@ const Carousel: React.FC<IProps> = (props) => {
           imgs.map((img, index) => {
             return <img
               data-index={index}
-              className={`piece piece-${index + 1}`}
+              className={`piece-${index + 1} piece`}
               key={index}
               src={img.src}
               alt={img.alt} />;
