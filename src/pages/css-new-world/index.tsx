@@ -1,8 +1,13 @@
 import React from 'react';
 
 import { usePageTitle } from '@/hooks';
+import { Carousel } from './components';
 
 import './index.less';
+
+interface IProps {
+  name?: string
+}
 
 interface IMsg {
   avatorUrl: string
@@ -10,6 +15,10 @@ interface IMsg {
   name: string
   txt?: string
   dataSelf?: boolean
+}
+
+interface IMsgItem {
+  msg: IMsg
 }
 
 const msgList: IMsg[] = [
@@ -46,9 +55,44 @@ const msgList: IMsg[] = [
   },
 ];
 
-interface IMsgItem {
-  msg: IMsg
-}
+const carouselImgs = [
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-1.jpg',
+    alt: 'pic1'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-2.jpg',
+    alt: 'pic2'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-3.jpg',
+    alt: 'pic3'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-4.jpg',
+    alt: 'pic4'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-5.jpg',
+    alt: 'pic5'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-6.jpg',
+    alt: 'pic6'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-7.jpg',
+    alt: 'pic7'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-8.jpg',
+    alt: 'pic8'
+  },
+  {
+    src: 'https://demo.cssworld.cn/new/images/nature-9.jpg',
+    alt: 'pic9'
+  },
+];
 
 const MsgItem = (props: IMsgItem) => {
   const { msg } = props;
@@ -63,9 +107,12 @@ const MsgItem = (props: IMsgItem) => {
   </section>;
 };
 
-const CSSNewWorld: React.FC = () => {
+const CSSNewWorld: React.FC<IProps> = (props) => {
+  const { name, children } = props;
+  console.log('children=====', children);
   usePageTitle('CSS新世界');
   return <>
+    <div>{name}</div>
     <div className="header">
       <a href="../" className="logo" title="回到demo首页"></a>
     </div>
@@ -133,6 +180,14 @@ const CSSNewWorld: React.FC = () => {
     <div className="demo-multi-border"></div>
     <div className="demo-loading"></div>
     {/* <div id="guide-overlap"></div> */}
+    <div className="demo-calc mt80 mb80">
+      <div className="bar bar60"></div>
+    </div>
+    <div className="demo-jianbian mb80">
+      <img />
+    </div>
+    <div className="demo-radial"></div>
+    <Carousel imgs={carouselImgs} />
   </>;
 };
 

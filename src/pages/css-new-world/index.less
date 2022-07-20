@@ -12,6 +12,13 @@
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Emoji, Helvetica, Arial, sans-serif;
 }
 
+.mt80 {
+  margin-top: 80px;
+}
+.mb80 {
+  margin-bottom: 80px;
+}
+
 // button {
 //   height: 40px;
 //   width: -webkit-fill-available;
@@ -23,6 +30,11 @@
 //   width: min-content;
 //   outline: 1px dotted;
 // }
+
+html {
+  font-size: 16px;
+  font-size: clamp(16px, calc(16px + 2 * (100vw - 375px) / 39) ,20px);
+}
 
 body {
   margin: 0;
@@ -363,4 +375,40 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.demo-calc {
+  .bar {
+    line-height: 20px;
+    background-color: #eee;
+  }
+  .bar60 {
+    --percent: 60;
+  }
+  .bar::before {
+    counter-reset: progress var(--percent);
+    content: counter(progress) '%\2002';
+    display: block;
+    width: calc(1% * var(--percent));
+    color: #fff;
+    background-color: deepskyblue;
+    text-align: right;
+  }
+}
+
+.demo-jianbian {
+  width: 500px; height: 120px;
+  // background: linear-gradient(white, deepskyblue);
+  img:not([src]) {
+    width: 200px; height: 100px;
+    background-color: #eee;
+    background-image: linear-gradient(to right bottom, transparent calc(50% - 1px), #ccc calc(50% - 1px), #ccc, transparent calc(50% + 1px)),
+      linear-gradient(to top right, transparent calc(50% - 1px), #ccc calc(50% - 1px), #ccc, transparent calc(50% + 1px));
+  }
+}
+
+.demo-radial {
+  width: 300px; height: 150px;
+  margin: 0 auto;
+  background-image: radial-gradient(100px at left top, white, deepskyblue);
 }
