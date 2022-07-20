@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { usePageTitle } from '@/hooks';
-import { Carousel } from './components';
+import { Carousel, Popup } from './components';
 
 import './index.less';
 
@@ -109,8 +109,14 @@ const MsgItem = (props: IMsgItem) => {
 
 const CSSNewWorld: React.FC<IProps> = (props) => {
   const { name, children } = props;
+  const [popedUp, setPopedUp] = React.useState(false);
   console.log('children=====', children);
   usePageTitle('CSS新世界');
+
+  const handleTogglePopup = () => {
+    setPopedUp(val => !val);
+  };
+
   return <>
     <div>{name}</div>
     <div className="header">
@@ -188,6 +194,8 @@ const CSSNewWorld: React.FC<IProps> = (props) => {
     </div>
     <div className="demo-radial"></div>
     <Carousel imgs={carouselImgs} />
+    <Popup visible={popedUp} onClose={() => setPopedUp(false)} maskCloseable/>
+    <button onClick={handleTogglePopup}>toggle popup</button>
   </>;
 };
 
