@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { usePageTitle } from '@/hooks';
-import { Carousel, Popup } from './components';
+import { Carousel, Popup, MusicLoading } from './components';
+import Animation, { IProps as AnimationProps } from './components/Animation';
 
 import './index.less';
 
@@ -194,8 +195,10 @@ const CSSNewWorld: React.FC<IProps> = (props) => {
     </div>
     <div className="demo-radial"></div>
     <Carousel imgs={carouselImgs} />
-    <Popup visible={popedUp} onClose={() => setPopedUp(false)} maskCloseable/>
+    <Popup visible={popedUp} onClose={() => setPopedUp(false)} maskCloseable />
     <button onClick={handleTogglePopup}>toggle popup</button>
+    <Animation />
+    <MusicLoading />
   </>;
 };
 
