@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 
-import { usePow, useCreation } from '@/hooks';
+import { usePow, useCreation, useWindowSize } from '@/hooks';
 import './index.less';
 
 /* Make all properties in T optional */
@@ -38,12 +38,18 @@ console.log('person======', person);
 export default function Home(): JSX.Element {
   const [flag, setFlag] = useState<boolean>(false);
   const data = usePow([1, 2, 3]);
+  const windowSize = useWindowSize();
+  console.log('useWindowSize===', windowSize);
 
   const getNewData = () => {
     return Math.random();
   };
 
   const nowData = useCreation(() => getNewData(), []);
+
+  React.useEffect(()=>{
+    console.log('component did update');
+  });
 
   return <>
     <span>这是第一句话</span>&nbsp;&nbsp;<span className="decoration">这是第二句话</span>
