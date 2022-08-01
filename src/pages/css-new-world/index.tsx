@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { usePageTitle } from '@/hooks';
-import { Carousel, Popup, MusicLoading } from './components';
+import { Carousel, Popup, MusicLoading, GridOverlay } from './components';
 import Animation, { IProps as AnimationProps } from './components/Animation';
 
 import './index.less';
@@ -199,6 +199,7 @@ const CSSNewWorld: React.FC<IProps> = (props) => {
     <button onClick={handleTogglePopup}>toggle popup</button>
     <Animation />
     <MusicLoading />
+    <GridOverlay />
   </>;
 };
 

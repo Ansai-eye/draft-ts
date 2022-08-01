@@ -412,3 +412,13 @@ body {
   margin: 0 auto;
   background-image: radial-gradient(100px at left top, white, deepskyblue);
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    filter: invert(1) hue-rotate(180deg);
+    background-color: #000;
+  }
+  img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}

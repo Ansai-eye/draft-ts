@@ -37,6 +37,7 @@ console.log('person======', person);
 
 export default function Home(): JSX.Element {
   const [flag, setFlag] = useState<boolean>(false);
+  const [count, setCount] = useState<number>(0);
   const data = usePow([1, 2, 3]);
   const windowSize = useWindowSize();
   console.log('useWindowSize===', windowSize);
@@ -47,8 +48,12 @@ export default function Home(): JSX.Element {
 
   const nowData = useCreation(() => getNewData(), []);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     console.log('component did update');
+  });
+
+  React.useEffect(() => {
+    document.title = `You click ${count} times`;
   });
 
   return <>
@@ -69,5 +74,6 @@ export default function Home(): JSX.Element {
       <div>useCreation包裹后的： {nowData}</div>
       <button onClick={() => { setFlag(v => !v); }}>渲染</button>
     </section>
+    <button onClick={() => setCount(count + 1)}>Click me</button>
   </>;
 }
