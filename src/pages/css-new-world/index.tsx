@@ -203,4 +203,21 @@ const CSSNewWorld: React.FC<IProps> = (props) => {
   </>;
 };
 
-export default CSSNewWorld;
+type VhBottomProps = {
+  children: React.ReactChild
+}
+
+const VhBottom: React.FC<VhBottomProps> = (props) => {
+  return <div className="vh-bottom-container">
+    <div>{props.children}</div>
+    <div className="footer"></div>
+  </div>;
+};
+
+const CSSNewWorldWithFooter: React.FC = () => {
+  return <VhBottom>
+    <CSSNewWorld />
+  </VhBottom>;
+};
+
+export default CSSNewWorldWithFooter;
