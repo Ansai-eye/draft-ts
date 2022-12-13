@@ -50,7 +50,7 @@ const config: webpack.Configuration = {
       },
       {
         //设置less文件处理
-        test: /\.less$/,
+        test: /\.(less|css)$/,
         use: [
           'style-loader',
           'css-loader',
