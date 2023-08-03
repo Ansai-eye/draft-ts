@@ -1,4 +1,4 @@
-import { Home2, Jiemi, ReactSourceCode, CSSWorld, JsAdvanced, CSSNewWorld } from '../pages';
+import { Home2, Jiemi, ReactSourceCode, CSSWorld, JsAdvanced, CSSNewWorld } from '@/pages';
 
 export const baseUrl = {
   home2: '/home2',

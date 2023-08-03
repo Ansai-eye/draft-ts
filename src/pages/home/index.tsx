@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { usePow, useCreation, useWindowSize } from '@/hooks';
+import { Routers } from '@/routes';
+
 import './index.less';
 
 /* Make all properties in T optional */
@@ -75,5 +78,10 @@ export default function Home(): JSX.Element {
       <button onClick={() => { setFlag(v => !v); }}>渲染</button>
     </section>
     <button onClick={() => setCount(count + 1)}>Click me</button>
+    {
+      Routers.map(route => {
+        return <p key={route.path}><Link to={route.path}>{route.path}</Link></p>;
+      })
+    }
   </>;
 }
