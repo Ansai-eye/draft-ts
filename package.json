@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_ENV=development TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --mode production",
-    "dev": "cross-env NODE_ENV=development TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve --open --config webpack.config.dev.ts"
+    "build": "cross-env NODE_ENV=development webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack serve --open --config webpack.config.dev.ts"
   },
   "keywords": [],
   "author": "",

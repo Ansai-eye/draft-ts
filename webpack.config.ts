@@ -1,6 +1,6 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
-import HtmlWebpackPlugin = require('html-webpack-plugin');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const RootPath = path.join(process.cwd());
 const AppPath = path.join(RootPath, '/src');
@@ -18,17 +18,12 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(?:js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.tsx?$/,
+        test: /\.(?:ts|tsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
@@ -79,7 +74,7 @@ const config: webpack.Configuration = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[folder]/[name].[hash:8].[ext]',
+            name: '[path]/[name].[hash:8].[ext]',
             outputPath: './static/assets',
           },
         },
